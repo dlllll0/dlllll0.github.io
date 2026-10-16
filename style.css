@@ -14,3 +14,62 @@ main > .about{margin-top:0;border-top:0}main > .work{border-top:1px solid var(--
 
 .visual-header .project-label{font-size:11px;font-weight:700;letter-spacing:1.3px}.card-copy{min-width:0}.card-visual{min-width:0}
 .skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill-grid p{line-height:1.9}.skill-grid small{display:block;line-height:1.8}@media(max-width:700px){.skill-grid{grid-template-columns:1fr}}
+
+/* Allow text and grid items to shrink without clipping their contents. */
+main,main section,.intro,.notebook,.about-copy,.skill-grid article,.detail-meta>div{min-width:0}
+h1,h2,h3,p,.card-result,.detail-meta b,.tags span,.skill-grid small{overflow-wrap:anywhere;word-break:normal}
+.card-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card-flow>span{min-width:0;overflow-wrap:anywhere}
+.card-flow small{flex-shrink:0}
+.tags span{max-width:100%}
+dialog{overflow-y:auto;overscroll-behavior:contain;max-height:90dvh}
+.detail-repo{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:900px) and (min-width:701px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:52px}
+  .notebook{transform:none;max-width:560px;width:100%}
+  .card-open{grid-template-columns:minmax(0,1fr)}
+  .card-visual{height:auto;min-height:220px}
+  .about{grid-template-columns:minmax(0,1fr);gap:22px}
+}
+@media(max-width:700px){
+  html{scroll-padding-top:24px}
+  html body>header{height:auto;min-height:88px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;padding:14px 20px}
+  header .brand{grid-column:1;grid-row:1}
+  header .header-tools{grid-column:2;grid-row:1}
+  header nav{grid-column:1/-1;grid-row:2;display:flex;justify-content:flex-start;gap:26px}
+  header nav a{min-height:38px;display:flex;align-items:center}
+  header .theme-toggle{min-height:40px;padding-inline:14px}
+  main{padding-inline:20px}
+  .hero{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:36px}
+  .intro h1{font-size:clamp(25px,6.8vw,30px);letter-spacing:-1px}
+  .intro p br{display:none}
+  .card-open{display:block}
+  .card-visual{height:auto;min-height:0;gap:18px;padding:22px}
+  .card-question{margin:0;font-size:22px}
+  .visual-header{flex-wrap:wrap;gap:8px}
+  .visual-header .project-label{font-size:10px;letter-spacing:.7px}
+  .card-copy{padding:22px}
+  .card-actions{flex-wrap:wrap;gap:8px 16px;padding:12px 22px}
+  .card-actions button,.card-actions a{min-height:44px;display:inline-flex;align-items:center}
+  .skill-grid{grid-template-columns:minmax(0,1fr)}
+  .about-values{gap:10px 14px}
+  dialog{width:calc(100% - 20px);max-width:none;max-height:calc(100dvh - 24px);margin:auto}
+  .detail-body{padding:24px 20px}
+  .detail-body>h2{font-size:25px}
+  .detail-meta{grid-template-columns:minmax(0,1fr);gap:18px}
+  .detail-repo{display:flex;justify-content:center;line-height:1.7}
+  .dialog-bar{padding:12px 16px}
+  .dialog-bar .close{min-height:44px}
+  footer p{width:auto;flex:1;min-width:150px}
+}
+@media(max-width:380px){
+  main{padding-inline:16px}
+  .card-flow{grid-template-columns:minmax(0,1fr);gap:6px}
+  .card-flow>span{padding-block:7px}
+  .card-copy,.card-visual{padding:18px}
+  .card-question{font-size:21px}
+  .notebook{padding:20px}
+  .note-top{letter-spacing:.7px;gap:8px}
+  .hero-meta{flex-wrap:wrap;gap:8px}
+}
+@media(hover:none){.project-card:hover,.project:hover{transform:none;box-shadow:none}}
