@@ -73,3 +73,15 @@ dialog{overflow-y:auto;overscroll-behavior:contain;max-height:90dvh}
   .hero-meta{flex-wrap:wrap;gap:8px}
 }
 @media(hover:none){.project-card:hover,.project:hover{transform:none;box-shadow:none}}
+
+.profile{border-block:1px solid var(--line);padding:36px 0 40px}
+.profile-heading h2{font-size:26px;letter-spacing:-.9px;margin:8px 0 26px}
+.profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 38px;margin:0}
+.profile-item{min-width:0;padding-left:16px;border-left:2px solid var(--line)}
+.profile-item dt{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}
+.profile-item dd{font-size:15px;line-height:1.85;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.profile-item dd span{color:var(--muted);font-size:14px}
+.profile-item a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px}
+.profile-item a:hover{color:var(--blue);text-decoration-color:var(--blue)}
+@media(max-width:900px){.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}}
+@media(max-width:600px){.profile{padding:28px 0 32px}.profile-heading h2{font-size:24px;margin-bottom:24px}.profile-grid{grid-template-columns:minmax(0,1fr);gap:22px}.profile-item{padding-left:14px}.profile-item dt{margin-bottom:4px}.profile-item a{display:inline-block;padding-block:4px}}
